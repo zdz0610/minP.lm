@@ -8,7 +8,7 @@
 #' @export
 
 
-summarize_power<-function(data_sim,crit_val,signi_level,permuted){
+summarize_power<-function(data_sim,crit_val,signi_level=0.05,permuted=FALSE){
 
   if(permuted){
     power=rep(0,4)

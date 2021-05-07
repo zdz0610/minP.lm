@@ -4,7 +4,7 @@
 \alias{summarize_power}
 \title{Calculation of Power for tests}
 \usage{
-summarize_power(data_sim, crit_val, signi_level, permuted)
+summarize_power(data_sim, crit_val, signi_level = 0.05, permuted = FALSE)
 }
 \arguments{
 \item{data_sim}{the simulated data}
