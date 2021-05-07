@@ -1,16 +1,18 @@
 Package: minP.lm
-Title: What the Package Does (One Line, Title Case)
+Title: Run minP test for linear models
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Dazheng",
            family = "Zhang",
            role = c("aut", "cre"),
            email = "dazheng.zhang@pennmedicine.upenn.edu",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+           comment = c(ORCID = "https://orcid.org/0000-0002-1431-0785"))
+Description: This package is used to conduct the minP test for linear models.
+License:  Artistic-2.0
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 3.1.0)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Suggests: 
+    testthat

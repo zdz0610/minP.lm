@@ -16,9 +16,10 @@ knitr::opts_chunk$set(
 # minP.lm
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/zdz0610/minP.lm/workflows/R-CMD-check/badge.svg)](https://github.com/zdz0610/minP.lm/actions)
 <!-- badges: end -->
 
-The goal of minP.lm is to ...
+The goal of minP.lm is to 
 
 ## Installation
 
