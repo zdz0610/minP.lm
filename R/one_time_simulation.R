@@ -19,6 +19,25 @@
 one_time_simulation<-function(n_sim,beta_0,beta_1,beta_2,mu,sigma,na,nb,permuted=FALSE){
   ## generate the data ##
   #true model
+
+  if (!is.numeric(beta_0))
+    stop("'beta_0' must be numeric")
+  if (!is.numeric(beta_1))
+    stop("'beta_1' must be numeric")
+  if (!is.numeric(beta_2))
+    stop("'beta_2' must be numeric")
+  if (!is.numeric(mu))
+    stop("'mu' must be numeric")
+  if (!((length(sigma) == 1L) && is.finite(sigma) &&
+        (sigma > 0) ))
+    stop("'sigma' must be a finite number greater than 0")
+  if (!((length(na) == 1L) && is.finite(na) &&
+        (na > 0) ))
+    stop("'na' must be a finite integer greater than 0")
+  if (!((length(nb) == 1L) && is.finite(nb) &&
+        (nb> 0) ))
+    stop("'nb' must be a finite integer greater than 0")
+
   x0<-rep(0,na+nb)
   x1<-rep(1,na+nb)
   x2<-rep(1,na+nb)

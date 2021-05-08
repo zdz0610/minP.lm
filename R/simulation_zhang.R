@@ -18,6 +18,12 @@
 #'
 
 simulation_zhang<-function(n_sim,parallel_state=FALSE,random_seed=123,beta_0,beta_1,beta_2,mu,sigma,na,nb,permuted=FALSE){
+  if (!((length(n_sim) == 1L) && is.finite(n_sim) &&
+        (n_sim > 0) ))
+    stop("'n_sim' must be a finite integer greater than 0")
+  if (!((length(random_seed) == 1L) && is.finite(random_seed) ))
+    stop("'random_seed' must be a number")
+
   data_sim<-NULL
   if(parallel_state){
     RNGkind("L'Ecuyer-CMRG")

@@ -9,7 +9,10 @@
 
 
 summarize_power<-function(data_sim,crit_val,signi_level=0.05,permuted=FALSE){
-
+  if (!is.numeric(crit_val))
+    stop("'crit_val' must be numeric")
+  if (!is.numeric(signi_level))
+    stop("'signi_level' must be numeric")
   if(permuted){
     power=rep(0,4)
     power[1]=sum(data_sim$observed_minP<crit_val)/length(data_sim[,1])

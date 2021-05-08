@@ -7,6 +7,9 @@
 #' @export
 #'
 summarize_type1<-function(data_sim,signi_level=0.05,permuted=FALSE){
+  if (!is.numeric(signi_level))
+    stop("'signi_level' must be numeric")
+
   type1_error<-apply(
     X=data_sim,2,FUN=function(a){
       sum(a<signi_level)/length(data_sim[,1])
