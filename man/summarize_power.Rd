@@ -16,7 +16,7 @@ summarize_power(data_sim, crit_val, signi_level = 0.05, permuted = FALSE)
 \item{permuted}{whether the simulated data includes the minP via permutation (default is FALSE)}
 }
 \value{
-value of power for minP test, and prespecified models
+value of power for minP test, and prespecified model 1 and model 2.
 }
 \description{
 Calculation of Power for tests

@@ -4,7 +4,7 @@
 #' @param crit_val identified critical value of minP from 'summarize_type1' function
 #' @param signi_level significance level (default alpha=0.05)
 #' @param permuted whether the simulated data includes the minP via permutation (default is FALSE)
-#' @return value of power for minP test, and prespecified models
+#' @return value of power for minP test, and prespecified model 1 and model 2.
 #' @export
 
 

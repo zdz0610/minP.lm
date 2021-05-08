@@ -14,7 +14,7 @@ summarize_type1(data_sim, signi_level = 0.05, permuted = FALSE)
 \item{permuted}{whether the simulated data includes the minP via permutation (default is FALSE)}
 }
 \value{
-list of type 1 errors and critical values
+list of type 1 errors and critical values for minP, linear model 1, and linear model 2.
 }
 \description{
 Calculation of Type 1 error and critical values of tests

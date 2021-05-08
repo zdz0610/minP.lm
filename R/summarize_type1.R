@@ -2,7 +2,7 @@
 #' @param data_sim the simulated data
 #' @param signi_level significance level (default alpha=0.05)
 #' @param permuted whether the simulated data includes the minP via permutation (default is FALSE)
-#' @return list of type 1 errors and critical values
+#' @return list of type 1 errors and critical values for minP, linear model 1, and linear model 2.
 #' @importFrom stats quantile
 #' @export
 #'
