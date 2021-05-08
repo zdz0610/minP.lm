@@ -47,7 +47,6 @@ simulation_zhang<-function(n_sim,parallel_state=FALSE,random_seed=123,beta_0,bet
           colnames(data_sim) <- c("observed_minP","p_1","p_2","chosen","T_1","T_2")
         }
 
-        data_sim
 
 
       }else{
@@ -64,9 +63,9 @@ simulation_zhang<-function(n_sim,parallel_state=FALSE,random_seed=123,beta_0,bet
           colnames(data_sim) <- c("observed_minP","p_1","p_2","chosen","T_1","T_2")
         }
 
-        data_sim
-      }
 
+      }
+      data_sim
     },
     error=function(cond) {
       message(paste("URL does not seem to exist:", url))
