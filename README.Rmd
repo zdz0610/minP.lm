@@ -19,14 +19,16 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/zdz0610/minP.lm/workflows/R-CMD-check/badge.svg)](https://github.com/zdz0610/minP.lm/actions)
 <!-- badges: end -->
 
-The goal of minP.lm is to 
+The goal of minP.lm is to test the null hypothesis of treatment equal to zero with minP test under the setting of the linear models.
 
 ## Installation
 
 You can install the released version of minP.lm from [CRAN](https://CRAN.R-project.org) with:
 
-``` r
-install.packages("minP.lm")
+```{r}
+library(devtools)
+install_github("zdz0610/minP.lm", force = TRUE)
+library(minP.lm)
 ```
 
 ## Example
@@ -36,20 +38,38 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 library(minP.lm)
 ## basic example code
+n_sim=10000#number of simulations
+
+parallel_state=TRUE#whether to use the parallel function (Default is False)
+
+random_seed=123	#specify a random seed to reproduce the results (Default seed is 123)
+
+beta_0=0.5	#coefficient of the treatment
+
+beta_1=2	#coefficient of the covariate 1
+
+beta_2=6	#cofficient of the covariate 2
+
+mu=0	#the overall mean response
+
+sigma=1	#standard error of the error term
+
+na=40	#number of patients in the control
+
+nb=40	#number of patients in the treatment
+
+permuted=FALSE	#whether use the permutation algorithm (Default is FALSE)
+#simulated data generation
+
+data1<-simulation_zhang(n_sim=n_sim,parallel_state=parallel_state,
+                        random_seed=random_seed,beta_0=beta_0,beta_1=beta_1,
+                        beta_2=beta_2,mu=mu,sigma=sigma,na=na,nb=nb,
+                        permuted=permuted)
+#summarize the data by power, Pearson correlation coefficient, and the 
+#Proprotion of minP choosing model 1
+# 0.0242 is found by the summarize_type1() under the null beta_0=0
+summarize_power(data1,crit_val=0.0242,signi_level=0.05,permuted=F)
+summarize_corr(data1)
+summarize_proportion(data1)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

@@ -10,7 +10,6 @@ Authors@R:
 Description: This package is used to conduct the minP test for linear models.
 License:  Artistic-2.0
 Encoding: UTF-8
-LazyData: true
 Depends: R (>= 3.1.0)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
