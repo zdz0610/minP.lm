@@ -112,7 +112,7 @@ one_time_simulation<-function(n_sim,beta_0,beta_1,beta_2,mu,sigma,na,nb,permuted
 
     min_p_b <- pmin(t1_p_permutated, t2_p_permutated)
     #get the permuted pvalue of the minp
-    min_p_corrected<- (1+sum(minP_obs>= min_p_b))/(1+length(min_p_b))
+    min_p_corrected<- (sum(minP_obs>= min_p_b))/(length(min_p_b))
 
   }
   if(permuted){
